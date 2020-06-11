@@ -1,0 +1,17 @@
+{
+  "name": "wogger-sender",
+  "version": "1.0.0",
+  "description": "Handles sending of messages to the Messenger Platform for Wogger",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Janjan Medina",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.0"
+  }
+}
