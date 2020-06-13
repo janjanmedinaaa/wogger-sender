@@ -22,8 +22,7 @@ const mongoClient = () => {
   return MongoClient.connect(process.env.MONGODB_URI, { useUnifiedTopology: true })
 }
 
-(async() => {
-  const client = await mongoClient();
+mongoClient().then(client => {
   const db = client.db(process.env.MONGO_DB_NAME);
   const logsCollection = db.collection('logs');
 
@@ -91,7 +90,7 @@ const mongoClient = () => {
       total: logsLastHour.length + logsToInsert.length
     });
   });
-})()
+});
 
 app.get('/', (req, res) => {
   return res.status(200).send('Welcome to Wogger! Development Logger with a Webhook functionality.');
