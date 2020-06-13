@@ -24,7 +24,7 @@ const mongoClient = () => {
 
 app.post('/:platform', async(req, res) => {
   const client = await mongoClient();
-  const db = client.db(process.env.MONGO_DB_NAME);
+  const db = client.db('wogger-logs');
   const logsCollection = db.collection('logs');
 
   let platform = req.params.platform;
