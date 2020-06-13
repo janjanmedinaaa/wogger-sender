@@ -90,12 +90,12 @@ mongoClient().then(client => {
       total: logsLastHour.length + logsToInsert.length
     });
   });
-});
 
-app.get('/', (req, res) => {
-  return res.status(200).send('Welcome to Wogger! Development Logger with a Webhook functionality.');
-});
-
-app.listen(PORT, () => {
-  console.log('Wogger Starter on Port:', PORT);
+  app.get('/', (req, res) => {
+    return res.status(200).send('Welcome to Wogger! Development Logger with a Webhook functionality.');
+  });
+  
+  app.listen(PORT, () => {
+    console.log('Wogger Starter on Port:', PORT);
+  });
 });
